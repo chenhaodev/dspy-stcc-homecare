@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": 300,
+    "protocol_category": "Stroke_Suspected",
+    "patient_age": 50,
+    "symptoms": "stroke - emergency case",
+    "medical_history": "Test case",
+    "triage_level": "emergency",
+    "rationale": "Test emergency case for Neuro Nurse"
+  },
+  {
+    "case_id": 301,
+    "protocol_category": "Stroke_Suspected",
+    "patient_age": 45,
+    "symptoms": "stroke - urgent case",
+    "medical_history": "Test case",
+    "triage_level": "urgent",
+    "rationale": "Test urgent case for Neuro Nurse"
+  }
+]

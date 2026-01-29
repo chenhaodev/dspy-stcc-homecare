@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": 0,
+    "protocol_category": "Laceration",
+    "patient_age": 50,
+    "symptoms": "laceration - emergency case",
+    "medical_history": "Test case",
+    "triage_level": "emergency",
+    "rationale": "Test emergency case for Wound Care Nurse"
+  },
+  {
+    "case_id": 1,
+    "protocol_category": "Laceration",
+    "patient_age": 45,
+    "symptoms": "laceration - urgent case",
+    "medical_history": "Test case",
+    "triage_level": "urgent",
+    "rationale": "Test urgent case for Wound Care Nurse"
+  }
+]

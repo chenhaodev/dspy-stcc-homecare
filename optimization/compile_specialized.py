@@ -110,11 +110,19 @@ def compile_all_specializations():
     print("=" * 70)
 
     roles = [
-        NurseRole.CHF_NURSE,
-        NurseRole.PREOP_NURSE,
+        # Top volume categories (cover most protocols)
+        NurseRole.WOUND_CARE_NURSE,  # 24 protocols
+        NurseRole.OB_NURSE,          # 13 protocols
+        NurseRole.PEDIATRIC_NURSE,   # 12 protocols
+        # Major specialties
+        NurseRole.NEURO_NURSE,       # 7 protocols
+        NurseRole.GI_NURSE,          # 6 protocols
+        NurseRole.RESPIRATORY_NURSE, # 6 protocols
+        NurseRole.MENTAL_HEALTH_NURSE, # 5 protocols
+        # Additional specialties
+        NurseRole.CHF_NURSE,         # 4 protocols
         NurseRole.ED_NURSE,
-        NurseRole.PEDIATRIC_NURSE,
-        NurseRole.RESPIRATORY_NURSE,
+        NurseRole.PREOP_NURSE,       # 2 protocols
     ]
 
     compiled_agents = {}

@@ -209,6 +209,273 @@ PEDIATRIC_CASES = [
     ),
 ]
 
+# TOP VOLUME CATEGORIES
+
+WOUND_CARE_CASES = [
+    # Emergency - Severe bleeding
+    PatientCase(
+        case_id=101,
+        protocol_category="Bleeding_Severe",
+        patient_age=35,
+        symptoms="Deep laceration to forearm, bright red blood spurting, unable to control with direct pressure",
+        medical_history="No bleeding disorders",
+        triage_level="emergency",
+        rationale="Arterial bleeding, life-threatening hemorrhage",
+    ),
+    # Emergency - Major burn
+    PatientCase(
+        case_id=102,
+        protocol_category="Burns_Thermal",
+        patient_age=45,
+        symptoms="Second-degree burns covering 20% body surface, severe pain, blistering on chest and arms",
+        medical_history="House fire injury",
+        triage_level="emergency",
+        rationale="Major burn requiring immediate care, fluid resuscitation needed",
+    ),
+    # Urgent - Deep wound
+    PatientCase(
+        case_id=103,
+        protocol_category="Laceration",
+        patient_age=28,
+        symptoms="4cm laceration on leg from broken glass, bleeding controlled, but deep, gaping wound",
+        medical_history="Tetanus shot 3 years ago",
+        triage_level="urgent",
+        rationale="Deep laceration requiring suturing, evaluation within hours",
+    ),
+    # Moderate - Minor burn
+    PatientCase(
+        case_id=104,
+        protocol_category="Burns_Thermal",
+        patient_age=32,
+        symptoms="Small first-degree burn on hand from cooking, red and painful, no blistering",
+        medical_history="None",
+        triage_level="moderate",
+        rationale="Minor burn, outpatient wound care",
+    ),
+    # Home care - Minor abrasion
+    PatientCase(
+        case_id=105,
+        protocol_category="Abrasions",
+        patient_age=25,
+        symptoms="Scraped knee from bicycle fall, cleaned and covered, no active bleeding",
+        medical_history="Up to date on tetanus",
+        triage_level="home_care",
+        rationale="Minor abrasion, home wound care appropriate",
+    ),
+]
+
+OB_CASES = [
+    # Emergency - Suspected labor preterm
+    PatientCase(
+        case_id=201,
+        protocol_category="Pregnancy_Suspected_Labor",
+        patient_age=28,
+        symptoms="30 weeks pregnant, regular contractions every 5 minutes, vaginal pressure",
+        medical_history="First pregnancy",
+        triage_level="emergency",
+        rationale="Preterm labor at 30 weeks, immediate evaluation needed",
+    ),
+    # Emergency - Severe vaginal bleeding
+    PatientCase(
+        case_id=202,
+        protocol_category="Pregnancy_Vaginal_Bleeding",
+        patient_age=26,
+        symptoms="20 weeks pregnant, heavy vaginal bleeding with clots, severe cramping",
+        medical_history="Previous miscarriage",
+        triage_level="emergency",
+        rationale="Significant bleeding in pregnancy, possible placental abruption",
+    ),
+    # Urgent - Decreased fetal movement
+    PatientCase(
+        case_id=203,
+        protocol_category="Pregnancy_Fetal_Movement_Problems",
+        patient_age=32,
+        symptoms="36 weeks pregnant, noticed decreased fetal movement for past 6 hours",
+        medical_history="Uncomplicated pregnancy",
+        triage_level="urgent",
+        rationale="Decreased fetal movement requires prompt assessment",
+    ),
+    # Moderate - Pregnancy nausea
+    PatientCase(
+        case_id=204,
+        protocol_category="Pregnancy_Nausea_and_Vomiting",
+        patient_age=25,
+        symptoms="8 weeks pregnant, persistent nausea and vomiting, able to keep some fluids down",
+        medical_history="First trimester",
+        triage_level="moderate",
+        rationale="Morning sickness, evaluation and treatment options",
+    ),
+    # Home care - Breastfeeding questions
+    PatientCase(
+        case_id=205,
+        protocol_category="Breastfeeding_Problems",
+        patient_age=30,
+        symptoms="2 weeks postpartum, asking about proper latch technique, no fever or severe pain",
+        medical_history="First baby",
+        triage_level="home_care",
+        rationale="Routine breastfeeding education",
+    ),
+]
+
+NEURO_CASES = [
+    # Emergency - Suspected stroke
+    PatientCase(
+        case_id=301,
+        protocol_category="Stroke_Suspected",
+        patient_age=68,
+        symptoms="Sudden right-sided weakness, facial droop, slurred speech, started 30 minutes ago",
+        medical_history="Hypertension, atrial fibrillation",
+        triage_level="emergency",
+        rationale="Acute stroke symptoms, immediate evaluation for thrombolytics",
+    ),
+    # Emergency - Active seizure
+    PatientCase(
+        case_id=302,
+        protocol_category="Seizure",
+        patient_age=45,
+        symptoms="Generalized tonic-clonic seizure lasting >5 minutes, unresponsive",
+        medical_history="Epilepsy, missed medication",
+        triage_level="emergency",
+        rationale="Status epilepticus, immediate intervention needed",
+    ),
+    # Urgent - Severe headache
+    PatientCase(
+        case_id=303,
+        protocol_category="Headache",
+        patient_age=42,
+        symptoms="Worst headache of life, sudden onset, photophobia, stiff neck",
+        medical_history="No previous severe headaches",
+        triage_level="urgent",
+        rationale="Possible subarachnoid hemorrhage, urgent evaluation",
+    ),
+    # Moderate - Post-seizure
+    PatientCase(
+        case_id=304,
+        protocol_category="Seizure",
+        patient_age=35,
+        symptoms="Brief seizure 2 hours ago, now alert and oriented, taking anti-epileptics",
+        medical_history="Known epilepsy, well-controlled",
+        triage_level="moderate",
+        rationale="Post-ictal, stable, needs evaluation",
+    ),
+    # Home care - Mild headache
+    PatientCase(
+        case_id=305,
+        protocol_category="Headache",
+        patient_age=30,
+        symptoms="Tension headache for 1 day, responds to ibuprofen, no neurological symptoms",
+        medical_history="Frequent tension headaches",
+        triage_level="home_care",
+        rationale="Benign tension headache, home management",
+    ),
+]
+
+GI_CASES = [
+    # Emergency - Severe abdominal pain with peritonitis
+    PatientCase(
+        case_id=401,
+        protocol_category="Abdominal_Pain_Adult",
+        patient_age=45,
+        symptoms="Severe abdominal pain with rigid abdomen, fever 39°C, rebound tenderness, vomiting",
+        medical_history="Appendectomy 10 years ago",
+        triage_level="emergency",
+        rationale="Acute abdomen with peritonitis signs, surgical emergency",
+    ),
+    # Urgent - Persistent vomiting with dehydration
+    PatientCase(
+        case_id=402,
+        protocol_category="Vomiting_Adult",
+        patient_age=38,
+        symptoms="Vomiting for 24 hours, unable to keep fluids down, dizzy when standing, dry mouth",
+        medical_history="None",
+        triage_level="urgent",
+        rationale="Dehydration from persistent vomiting, needs IV fluids",
+    ),
+    # Urgent - Rectal bleeding
+    PatientCase(
+        case_id=403,
+        protocol_category="Rectal_Bleeding",
+        patient_age=55,
+        symptoms="Bright red blood in stool, moderate amount, ongoing for 2 days, fatigue",
+        medical_history="No previous GI bleeding",
+        triage_level="urgent",
+        rationale="Active GI bleeding requires prompt evaluation",
+    ),
+    # Moderate - Abdominal pain
+    PatientCase(
+        case_id=404,
+        protocol_category="Abdominal_Pain_Adult",
+        patient_age=35,
+        symptoms="Cramping abdominal pain with diarrhea for 2 days, no fever, tolerating fluids",
+        medical_history="None",
+        triage_level="moderate",
+        rationale="Likely gastroenteritis, evaluation and supportive care",
+    ),
+    # Home care - Mild indigestion
+    PatientCase(
+        case_id=405,
+        protocol_category="Indigestion",
+        patient_age=40,
+        symptoms="Mild heartburn after spicy meal, responds to antacids",
+        medical_history="Occasional reflux",
+        triage_level="home_care",
+        rationale="Simple indigestion, home management appropriate",
+    ),
+]
+
+MENTAL_HEALTH_CASES = [
+    # Emergency - Suicide attempt
+    PatientCase(
+        case_id=501,
+        protocol_category="Suicide_Attempt_Threat",
+        patient_age=32,
+        symptoms="Took overdose of pills 30 minutes ago, expressing desire to die, lethargic",
+        medical_history="Depression, previous attempts",
+        triage_level="emergency",
+        rationale="Active suicide attempt, immediate medical and psychiatric care",
+    ),
+    # Emergency - Acute psychosis
+    PatientCase(
+        case_id=502,
+        protocol_category="Altered_Mental_Status_AMS",
+        patient_age=28,
+        symptoms="Hallucinating, agitated, threatening harm to others, not oriented",
+        medical_history="Schizophrenia, medication non-compliance",
+        triage_level="emergency",
+        rationale="Acute psychotic episode with danger to self/others",
+    ),
+    # Urgent - Severe anxiety/panic
+    PatientCase(
+        case_id=503,
+        protocol_category="Anxiety",
+        patient_age=35,
+        symptoms="Severe panic attack for 1 hour, chest pain, hyperventilating, can't calm down",
+        medical_history="Panic disorder",
+        triage_level="urgent",
+        rationale="Severe panic attack, needs medical evaluation and crisis intervention",
+    ),
+    # Moderate - Anxiety
+    PatientCase(
+        case_id=504,
+        protocol_category="Anxiety",
+        patient_age=40,
+        symptoms="Increased anxiety for 2 weeks, difficulty sleeping, worried about work stress",
+        medical_history="No psychiatric history",
+        triage_level="moderate",
+        rationale="New onset anxiety, needs evaluation and counseling",
+    ),
+    # Home care - Mild stress
+    PatientCase(
+        case_id=505,
+        protocol_category="Anxiety",
+        patient_age=30,
+        symptoms="Mild stress from life changes, sleeping okay, functioning normally, seeking advice",
+        medical_history="None",
+        triage_level="home_care",
+        rationale="Normal stress response, education and coping strategies",
+    ),
+]
+
 RESPIRATORY_CASES = [
     # Emergency
     PatientCase(
@@ -264,7 +531,17 @@ def generate_specialized_dataset(role: NurseRole, output_dir: Path = None) -> Li
     specialization = get_specialization(role)
 
     # Select cases based on role
-    if role == NurseRole.CHF_NURSE:
+    if role == NurseRole.WOUND_CARE_NURSE:
+        cases = WOUND_CARE_CASES
+    elif role == NurseRole.OB_NURSE:
+        cases = OB_CASES
+    elif role == NurseRole.NEURO_NURSE:
+        cases = NEURO_CASES
+    elif role == NurseRole.GI_NURSE:
+        cases = GI_CASES
+    elif role == NurseRole.MENTAL_HEALTH_NURSE:
+        cases = MENTAL_HEALTH_CASES
+    elif role == NurseRole.CHF_NURSE:
         cases = CHF_CASES
     elif role == NurseRole.PREOP_NURSE:
         cases = PREOP_CASES
@@ -276,10 +553,13 @@ def generate_specialized_dataset(role: NurseRole, output_dir: Path = None) -> Li
         cases = RESPIRATORY_CASES
     elif role == NurseRole.GENERAL_NURSE:
         # Combine all cases for general nurse
-        cases = CHF_CASES + PREOP_CASES + ED_CASES + PEDIATRIC_CASES + RESPIRATORY_CASES
+        cases = (
+            WOUND_CARE_CASES + OB_CASES + NEURO_CASES + GI_CASES + MENTAL_HEALTH_CASES +
+            CHF_CASES + PREOP_CASES + ED_CASES + PEDIATRIC_CASES + RESPIRATORY_CASES
+        )
     else:
         # Default to general cases
-        cases = CHF_CASES + PREOP_CASES + ED_CASES
+        cases = WOUND_CARE_CASES + CHF_CASES + ED_CASES
 
     # Save to file
     if output_dir is None:
@@ -321,11 +601,19 @@ def generate_all_specialized_datasets():
     output_dir = Path(__file__).parent
 
     for role in [
-        NurseRole.CHF_NURSE,
-        NurseRole.PREOP_NURSE,
-        NurseRole.ED_NURSE,
+        # Top volume categories
+        NurseRole.WOUND_CARE_NURSE,
+        NurseRole.OB_NURSE,
         NurseRole.PEDIATRIC_NURSE,
+        # Major specialties
+        NurseRole.NEURO_NURSE,
+        NurseRole.GI_NURSE,
         NurseRole.RESPIRATORY_NURSE,
+        NurseRole.MENTAL_HEALTH_NURSE,
+        # Additional roles
+        NurseRole.CHF_NURSE,
+        NurseRole.ED_NURSE,
+        NurseRole.PREOP_NURSE,
         NurseRole.GENERAL_NURSE,
     ]:
         generate_specialized_dataset(role, output_dir)

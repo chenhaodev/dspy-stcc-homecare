@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": 400,
+    "protocol_category": "Abdominal_Pain_Adult",
+    "patient_age": 50,
+    "symptoms": "abdominal pain - emergency case",
+    "medical_history": "Test case",
+    "triage_level": "emergency",
+    "rationale": "Test emergency case for GI Nurse"
+  },
+  {
+    "case_id": 401,
+    "protocol_category": "Abdominal_Pain_Adult",
+    "patient_age": 45,
+    "symptoms": "abdominal pain - urgent case",
+    "medical_history": "Test case",
+    "triage_level": "urgent",
+    "rationale": "Test urgent case for GI Nurse"
+  }
+]

@@ -1,20 +1,20 @@
 [
   {
-    "case_id": 700,
+    "case_id": 800,
     "protocol_category": "Chest Pain",
     "patient_age": 50,
-    "symptoms": "chest pain - emergency case",
+    "symptoms": "trauma - emergency case",
     "medical_history": "Test case",
     "triage_level": "emergency",
-    "rationale": "Test emergency case for CHF Nurse"
+    "rationale": "Test emergency case for ED Nurse"
   },
   {
-    "case_id": 701,
+    "case_id": 801,
     "protocol_category": "Chest Pain",
     "patient_age": 45,
-    "symptoms": "chest pain - urgent case",
+    "symptoms": "trauma - urgent case",
     "medical_history": "Test case",
     "triage_level": "urgent",
-    "rationale": "Test urgent case for CHF Nurse"
+    "rationale": "Test urgent case for ED Nurse"
   }
 ]

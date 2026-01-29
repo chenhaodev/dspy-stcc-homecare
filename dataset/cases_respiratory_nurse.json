@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": 500,
+    "protocol_category": "Shortness of Breath",
+    "patient_age": 50,
+    "symptoms": "shortness of breath - emergency case",
+    "medical_history": "Test case",
+    "triage_level": "emergency",
+    "rationale": "Test emergency case for Respiratory Nurse"
+  },
+  {
+    "case_id": 501,
+    "protocol_category": "Shortness of Breath",
+    "patient_age": 45,
+    "symptoms": "shortness of breath - urgent case",
+    "medical_history": "Test case",
+    "triage_level": "urgent",
+    "rationale": "Test urgent case for Respiratory Nurse"
+  }
+]
