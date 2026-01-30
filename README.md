@@ -38,8 +38,11 @@ Instead of one generic triage agent, this system provides **10 specialized "remo
 ```bash
 cd stcc_triage_agent
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies using uv
+uv sync
+
+# Or install specific packages
+uv pip install -r requirements.txt
 
 # Configure API key
 cp .env.example .env
@@ -49,11 +52,11 @@ cp .env.example .env
 ### 2. Generate Protocols & Data
 
 ```bash
-# Parse 225 STCC protocols (requires ../STCC-chinese/)
-python protocols/parser.py
+# Parse 225 STCC protocols (source: protocols/STCC-chinese/)
+uv run python protocols/parser.py
 
 # Generate specialized training datasets for all nurses
-python dataset/specialized_generator_simple.py
+uv run python dataset/specialized_generator_simple.py
 ```
 
 **Output:**
@@ -65,6 +68,25 @@ python dataset/specialized_generator_simple.py
 ✓ Generated 10 specialized datasets
 ```
 
+### 3. Launch the Web UI (Recommended)
+
+```bash
+# Run the interactive Streamlit UI
+./scripts/run_ui.sh
+
+# Or manually:
+uv run streamlit run ui/streamlit_app.py
+```
+
+**The UI opens at `http://localhost:8501`**
+
+**Features:**
+- 🏥 Select from 10 specialized nurses
+- 💬 Interactive chat interface
+- 🎨 Color-coded triage levels
+- 🔍 View reasoning steps
+- 🔧 Check optimization status
+
 ---
 
 ## How to Optimize Specific Nurses
@@ -73,7 +95,7 @@ python dataset/specialized_generator_simple.py
 
 ```bash
 # Optimize the Wound Care specialist (24 protocols, highest volume!)
-python optimization/compile_specialized.py --role wound_care_nurse
+uv run python optimization/compile_specialized.py --role wound_care_nurse
 ```
 
 **What happens:**
@@ -102,7 +124,7 @@ Training set: 5 specialized cases
 
 ```bash
 # Compile all 10 specialists (takes ~1 hour)
-python optimization/compile_specialized.py
+uv run python optimization/compile_specialized.py
 ```
 
 **Output:**
@@ -422,8 +444,8 @@ Ranked by STCC protocol coverage:
 
 ### "STCC directory not found"
 ```bash
-# Parser expects protocols at ../STCC-chinese/
-ls ../STCC-chinese/*.md
+# Protocol source files live inside the repo
+ls protocols/STCC-chinese/*.md
 # Should see 225 .md files
 ```
 

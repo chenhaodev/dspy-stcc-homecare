@@ -56,16 +56,26 @@ def compile_specialized_agent(
     with dataset_path.open("r", encoding="utf-8") as f:
         cases_data = json.load(f)
 
-    trainset = [PatientCase(**case) for case in cases_data]
+    patient_cases = [PatientCase(**case) for case in cases_data]
 
-    print(f"\nTraining set: {len(trainset)} specialized cases")
+    print(f"\nTraining set: {len(patient_cases)} specialized cases")
     distribution = {}
-    for case in trainset:
+    for case in patient_cases:
         distribution[case.triage_level] = distribution.get(case.triage_level, 0) + 1
 
     print("Distribution:")
     for level, count in sorted(distribution.items()):
         print(f"  {level}: {count} cases")
+
+    # Convert to DSPy Example format
+    trainset = []
+    for case in patient_cases:
+        example = dspy.Example(
+            symptoms=case.symptoms,
+            triage_level=case.triage_level,
+        ).with_inputs("symptoms")
+        example.case = case
+        trainset.append(example)
 
     # Step 2: Initialize agent
     print("\nInitializing triage agent...")
@@ -82,9 +92,8 @@ def compile_specialized_agent(
 
     # Compile with domain-specific training data
     compiled_agent = teleprompter.compile(
-        agent.triage_module,
+        student=agent.triage_module,
         trainset=trainset,
-        valset=trainset[:len(trainset) // 2],  # Use first half for validation
     )
 
     # Step 4: Save compiled agent

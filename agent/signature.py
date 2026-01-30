@@ -12,6 +12,36 @@ except ImportError:
     )
 
 
+class FollowUpSignature(dspy.Signature):
+    """
+    Generate natural follow-up questions when patient information is incomplete.
+
+    Acts as an experienced triage nurse. Respond in the SAME LANGUAGE as the patient.
+    """
+
+    patient_message = dspy.InputField(
+        desc=(
+            "The patient's message(s) so far. May be in any language."
+        )
+    )
+
+    missing_categories = dspy.InputField(
+        desc=(
+            "Comma-separated list of missing critical information, "
+            "e.g.: duration, severity, age, medical history, medications, "
+            "associated symptoms."
+        )
+    )
+
+    follow_up_questions = dspy.OutputField(
+        desc=(
+            "Natural, empathetic follow-up questions in the SAME LANGUAGE "
+            "as the patient. Be conversational like a real nurse. "
+            "Ask 2-4 focused questions. Do NOT provide any triage or diagnosis."
+        )
+    )
+
+
 class TriageSignature(dspy.Signature):
     """
     Medical triage signature following STCC protocols.

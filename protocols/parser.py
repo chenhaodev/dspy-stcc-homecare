@@ -132,7 +132,7 @@ def parse_stcc_markdown(filepath: Path) -> STCCProtocol:
 
 
 def parse_all_protocols(
-    stcc_dir: Path = Path("./STCC-chinese"),
+    stcc_dir: Path = Path(__file__).parent / "STCC-chinese",
 ) -> List[STCCProtocol]:
     """
     Parse all STCC protocols and save to JSON.
@@ -157,7 +157,7 @@ def parse_all_protocols(
         print("\n".join(errors))
 
     # Save to JSON
-    output_path = Path("protocols/protocols.json")
+    output_path = Path(__file__).parent / "protocols.json"
     output_path.parent.mkdir(exist_ok=True, parents=True)
 
     with output_path.open("w", encoding="utf-8") as f:
@@ -173,12 +173,11 @@ def parse_all_protocols(
 
 
 if __name__ == "__main__":
-    # Parse protocols from parent directory
-    stcc_dir = Path("../STCC-chinese")
+    stcc_dir = Path(__file__).parent / "STCC-chinese"
     if not stcc_dir.exists():
-        print(f"STCC directory not found at {stcc_dir.absolute()}")
-        print("Trying alternative path...")
-        stcc_dir = Path("./STCC-chinese")
+        print(f"STCC directory not found at {stcc_dir}")
+        print("Expected: protocols/STCC-chinese/ (225 markdown files)")
+        raise SystemExit(1)
 
     protocols = parse_all_protocols(stcc_dir)
     print(f"\nSuccessfully parsed {len(protocols)} STCC protocols")

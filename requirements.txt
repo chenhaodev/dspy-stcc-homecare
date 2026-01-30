@@ -1,4 +1,9 @@
 # STCC Triage Agent Dependencies
+#
+# RECOMMENDED: Use `uv sync` to install from pyproject.toml
+# This file is provided for backwards compatibility
+#
+# Install: uv pip install -r requirements.txt
 
 # Core Framework
 dspy-ai>=2.5.0
@@ -20,3 +25,6 @@ uvicorn>=0.20.0
 
 # OpenAI SDK (for DeepSeek compatibility)
 openai>=1.0.0
+
+# UI
+streamlit>=1.31.0

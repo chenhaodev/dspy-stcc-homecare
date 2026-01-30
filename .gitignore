@@ -54,10 +54,9 @@ htmlcov/
 
 # Generated Files
 protocols/protocols.json
-dataset/cases.json
-deployment/compiled_triage_agent.json
+dataset/cases*.json
+deployment/compiled_*.json
 deployment/package_info.json
-validation/edge_case_report.json
 
 # Logs
 *.log
@@ -76,3 +75,7 @@ dmypy.json
 
 # Ruff
 .ruff_cache/
+
+# Streamlit
+.streamlit/
+*.streamlit/
