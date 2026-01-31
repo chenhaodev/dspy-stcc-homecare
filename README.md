@@ -10,6 +10,14 @@ AI-powered medical triage with **specialized nurse agents** optimized for specif
 
 ---
 
+## Demo
+
+![Demo](docs/demo.gif)
+
+> Interactive triage system with 10 specialized nurse agents. [Watch full video](docs/demo.mp4)
+
+---
+
 ## What This Does
 
 Instead of one generic triage agent, this system provides **10 specialized "remote nurses"**, each expert in their domain:
