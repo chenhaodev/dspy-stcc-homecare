@@ -58,6 +58,15 @@ dataset/cases*.json
 deployment/compiled_*.json
 deployment/package_info.json
 
+# User Data (v2.0.0+)
+user_data/
+.stcc_triage/
+
+# Build artifacts (v2.0.0+)
+dist/
+build/
+*.egg-info/
+
 # Logs
 *.log
 
