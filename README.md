@@ -22,51 +22,57 @@
 
 This is now a **professional DSPy extension** that users can install locally:
 
-- 📦 **Installable package**: `pip install -e .`
+- 📦 **PyPI package**: `pip install dspy-stcc-homecare`
 - 🚀 **CLI commands**: `stcc-ui`, `stcc-optimize`, `stcc-api`
 - 🏗️ **Clean structure**: All code in `stcc_triage/` package
-- 📚 **Bundled protocols**: STCC-chinese protocols (~2MB) included
-- 💾 **User data separation**: Compiled agents in `user_data/` (gitignored)
+- 📚 **Bundled data**: 225 STCC protocols pre-parsed and included
+- 💾 **Zero setup**: Just install and run - no manual configuration
 - 🔄 **Breaking changes**: Clean v2.0.0 release (no backward compatibility)
 
 ---
 
 ## Installation
 
-### 1. Clone the Repository
+### Quick Start (PyPI)
 
 ```bash
-git clone https://github.com/chenhaodev/dspy-stcc-homecare.git
-cd dspy-stcc-homecare
+# Install the package
+pip install dspy-stcc-homecare
+
+# Configure API key
+export DEEPSEEK_API_KEY="your-key-here"
+
+# Launch UI
+stcc-ui
 ```
 
-### 2. Install Dependencies
+### Development Setup
 
 ```bash
-# Install with pip (editable mode)
+# Clone repository
+git clone https://github.com/chenhaodev/dspy-stcc-homecare.git
+cd dspy-stcc-homecare
+
+# Install in editable mode
 pip install -e .
 
-# Or install with uv (recommended - faster)
+# Or use uv (faster)
 uv pip install -e .
 
 # Install with API support
 pip install -e ".[api]"
 ```
 
-### 3. Configure API Key
+### Configure API Key
 
 ```bash
+# Option 1: Environment variable
+export DEEPSEEK_API_KEY="your-key-here"
+
+# Option 2: .env file (for development)
 cp .env.example .env
 # Edit .env and add: DEEPSEEK_API_KEY=your_key_here
 ```
-
-### 4. Parse Protocols (First Time Only)
-
-```bash
-stcc-parse-protocols
-```
-
-This parses 225 STCC protocols from `stcc_triage/data/protocols/STCC-chinese/` and generates `protocols/protocols.json`.
 
 ---
 
@@ -278,7 +284,7 @@ stcc-api --host 127.0.0.1 --port 8080   # Custom host/port
 stcc-api --reload                       # Auto-reload for dev
 
 # Parse protocols
-stcc-parse-protocols                    # Parse STCC markdown to JSON
+stcc-parse-protocols                    # (Optional) Re-parse STCC markdown files
 ```
 
 ---
@@ -344,7 +350,10 @@ mypy stcc_triage/
 
 ### "protocols.json not found"
 
+This should only happen in development. The protocols are pre-bundled when installing from PyPI.
+
 ```bash
+# For development only - regenerate protocols
 stcc-parse-protocols
 ```
 

@@ -16,8 +16,9 @@ sys.path.insert(0, str(project_root))
 import dspy  # noqa: E402
 
 from stcc_triage.core.settings import get_deepseek_config  # noqa: E402
-from stcc_triage.core.triage_agent import STCCTriageAgent  # noqa: E402
-from stcc_triage.datasets.nurse_roles import NurseRole, get_specialization  # noqa: E402
+from stcc_triage.core.agent import STCCTriageAgent  # noqa: E402
+from stcc_triage.core.paths import get_protocols_json_path  # noqa: E402
+from stcc_triage.nurses.roles import NurseRole, get_specialization  # noqa: E402
 
 
 def check_prerequisites() -> bool:
@@ -36,8 +37,9 @@ def check_prerequisites() -> bool:
         return False
 
     # Check protocols
-    protocols_path = project_root / "protocols" / "protocols.json"
-    if not protocols_path.exists():
+    try:
+        protocols_path = get_protocols_json_path()
+    except FileNotFoundError:
         st.error("⚠️ Protocols not found")
         st.code("Run: python protocols/parser.py")
         return False

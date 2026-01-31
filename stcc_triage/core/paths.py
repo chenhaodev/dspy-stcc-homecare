@@ -37,9 +37,14 @@ def get_protocols_json_path():
     Get path to protocols.json file.
 
     Returns:
-        Path to protocols.json in repo root or user data directory
+        Path to protocols.json in package data, repo root, or user data directory
     """
-    # Check repo root first (for development)
+    # Check bundled package data first (for pip-installed package)
+    bundled_protocols = get_package_root() / "data" / "protocols.json"
+    if bundled_protocols.exists():
+        return bundled_protocols
+
+    # Check repo root second (for development)
     repo_root = get_package_root().parent
     protocols_json = repo_root / "protocols" / "protocols.json"
 
@@ -53,6 +58,7 @@ def get_protocols_json_path():
         raise FileNotFoundError(
             f"protocols.json not found. Run: stcc-parse-protocols\n"
             f"Checked locations:\n"
+            f"  - {bundled_protocols}\n"
             f"  - {protocols_json}\n"
             f"  - {user_data_protocols}"
         )
